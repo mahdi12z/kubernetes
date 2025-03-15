@@ -67,10 +67,10 @@ ssh-copy-id aress@nfs-server-2
 ssh-copy-id aress@nfs-server-1
 ```
 Run an initial rsync from nfs-server-1 to nfs-server-2:
-``bash
+```bash
 rsync -avz --delete --numeric-ids --perms --owner --group --rsync-path="sudo rsync" /srv/nfs4/ aress@nfs-server-2:/srv/nfs4/
 
-``
+```
 # 4: Configure Keepalived for VIP Management
  1. Configure Keepalived on nfs-server-1 (MASTER)
  Edit /etc/keepalived/keepalived.conf:
