@@ -154,7 +154,7 @@ sudo systemctl enable keepalived
 
  Create the script /usr/local/bin/sync-back.sh on nfs-server-2:
 
- ```bash
+```bash
 sudo vi /usr/local/bin/sync-back.sh
 ```
 
@@ -163,21 +163,21 @@ sudo vi /usr/local/bin/sync-back.sh
 #!/bin/bash
 echo "$(date) - Syncing from nfs-server-2 to nfs-server-1" >> /var/log/rsync-failover.log
 rsync -avz --delete --numeric-ids --perms --owner --group --rsync-path="sudo rsync" /srv/nfs4/ aress@nfs-server-1:/srv/nfs4/
-``
+```
  Make the script executable:
-``bash
+```bash
 sudo chmod +x /usr/local/bin/sync-back.sh
-``
+```
 
 Create the script /usr/local/bin/sync-forward.sh on nfs-server-1:
 
-``bash
+```bash
 
  sudo vi /usr/local/bin/sync-forward.sh
-``
+```
 
  Content:
-``bash
+```bash
 #!/bin/bash
 echo "$(date) - Syncing from nfs-server-1 to nfs-server-2" >> /var/log/rsync-failover.log
 rsync -avz --delete --numeric-ids --perms --owner --group --rsync-path="sudo rsync" /srv/nfs4/ aress@nfs-server-2:/srv/nfs4/
