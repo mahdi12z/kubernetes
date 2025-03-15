@@ -9,7 +9,10 @@ Objective:
 This document explains how to set up a highly available NFS cluster using two NFS servers:
 
 nfs-server-1: 192.168.100.130 → MASTER
+
 nfs-server-2: 192.168.100.129 → BACKUP
+
+
 VIP: 192.168.100.200 → The IP address used by Kubernetes and clients to access NFS.
  Tools Used:
 
